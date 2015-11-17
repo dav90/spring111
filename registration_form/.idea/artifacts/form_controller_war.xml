@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="form_controller:war">
+    <output-path>$PROJECT_DIR$/form_controller/target</output-path>
+    <root id="archive" name="registration_form.war">
+      <element id="artifact" artifact-name="form_controller:war exploded" />
+    </root>
+  </artifact>
+</component>

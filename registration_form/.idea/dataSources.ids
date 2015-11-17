@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - java2@localhost" uuid="f7d485a0-a076-4f64-9209-9a23b9827109">
+    <database-info product="MySQL" version="5.5.5-10.0.17-MariaDB" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact"/>
+    <schema name="" catalog="java2"/>
+    <table name="address" schema="" catalog="java2" type="TABLE">
+      <column name="address_id" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
+      <column name="city" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="street" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="user_id" sqlType="BIGINT" precision="19" scale="0" nullable="true" jdbcType="-5"/>
+      <primary-key name="PRIMARY" columns="address_id"/>
+      <foreign-key name="FK_7rod8a71yep5vxasb0ms3osbg" columns="user_id" ref-table="user" ref-schema="" ref-catalog="java2" ref-columns="user_id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="FK_7rod8a71yep5vxasb0ms3osbg" unique="false" columns="user_id"/>
+    </table>
+    <table name="contact" schema="" catalog="java2" type="TABLE">
+      <column name="contact_id" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
+      <column name="homeNumber" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="mobileNumber" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="user_id" sqlType="BIGINT" precision="19" scale="0" nullable="true" jdbcType="-5"/>
+      <primary-key name="PRIMARY" columns="contact_id"/>
+      <foreign-key name="FK_cjqqxjkly5hj40axc1whq4yec" columns="user_id" ref-table="user" ref-schema="" ref-catalog="java2" ref-columns="user_id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="FK_cjqqxjkly5hj40axc1whq4yec" unique="false" columns="user_id"/>
+    </table>
+    <table name="user" schema="" catalog="java2" type="TABLE">
+      <column name="user_id" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
+      <column name="email" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="password" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="status" sqlType="BIT" precision="1" scale="0" nullable="true" jdbcType="-7"/>
+      <column name="surname" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="user_id"/>
+      <exported-key name="FK_7rod8a71yep5vxasb0ms3osbg" table="address" schema="" catalog="java2" columns="user_id"/>
+      <exported-key name="FK_cjqqxjkly5hj40axc1whq4yec" table="contact" schema="" catalog="java2" columns="user_id"/>
+      <index name="UK_ob8kqyqqgmefl0aco34akdtpe" unique="true" columns="email"/>
+    </table>
+  </data-source>
+</component>
